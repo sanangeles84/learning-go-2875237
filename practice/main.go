@@ -6,7 +6,8 @@ import (
 	"net/http"
 )
 
-const url = "http://services.explorecalifornia.org/json/tours.php"
+// const url = "http://services.explorecalifornia.org/json/tours.php"
+const url = "https://reqres.in/api/products"
 
 func main() {
 
@@ -18,6 +19,8 @@ func main() {
 	fmt.Printf("Response type: %T\n", resp)
 
 	defer resp.Body.Close()
+
+	fmt.Println(resp.Status)
 
 	bytes, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
